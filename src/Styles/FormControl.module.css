@@ -1,0 +1,45 @@
+.labelText {
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 5px;
+}
+
+.formGroup label span {
+  color: rgba(249, 0, 0, 1);
+}
+
+.formGroup input {
+  position: relative;
+  width: 100%;
+  height: 45px;
+  padding: 0 10px;
+  border-radius: 2px;
+  border: 1px solid #d0d5dd;
+  background-color: #f6f6f6;
+  outline: none;
+  text-align: left;
+  box-shadow: none !important;
+}
+
+.formGroup textarea {
+  position: relative;
+  width: 100%;
+  height: 127px;
+  padding: 0 10px;
+  border-radius: 2px;
+  border: 1px solid #d0d5dd;
+  background-color: #f6f6f6;
+  outline: none;
+  text-align: left;
+  resize: none;
+  box-shadow: none !important;
+}
+
+.formGroup input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.formGroup input::-webkit-outer-spin-button,
+.formGroup input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
