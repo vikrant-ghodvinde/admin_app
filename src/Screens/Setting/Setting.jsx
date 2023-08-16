@@ -1,5 +1,6 @@
 import AccountEmail from "Components/ChangeSettingModal/AccountEmail/AccountEmail";
 import AccountPassword from "Components/ChangeSettingModal/AccountPassword/AccountPassword";
+import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import formStyle from "Styles/FormControl.module.css";
@@ -10,9 +11,22 @@ const Setting = () => {
   return (
     <div className="app__wrapper">
       <Container fluid>
-        <Row>
+        <Row className="py-5">
           <Col md={12} lg={6}>
             <Row className="gy-4">
+              <Col xs={12} md={12}>
+                <div className={formStyle.userImageUpload}>
+                  <div className={formStyle.imageBox}>
+                    <img src="/assets/images/user.png" alt="user" className="img-fluid" />
+                  </div>
+                  <div className={formStyle.icon}>
+                    <input type="file" name="" id="" />
+                    <span className="display__icon">
+                      <FeatherIcon icon="camera" size={18} />
+                    </span>
+                  </div>
+                </div>
+              </Col>
               <Col xs={12} md={12}>
                 <div className={formStyle.formGroup}>
                   <label htmlFor="" className={formStyle.labelText}>
@@ -49,7 +63,10 @@ const Setting = () => {
           </Col>
         </Row>
       </Container>
-      <AccountPassword show={passwordModalShow} setShow={setPasswordModalShow} />
+      <AccountPassword
+        show={passwordModalShow}
+        setShow={setPasswordModalShow}
+      />
       <AccountEmail show={emailModalShow} setShow={setEmailModalShow} />
     </div>
   );
