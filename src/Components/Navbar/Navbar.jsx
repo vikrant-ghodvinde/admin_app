@@ -3,9 +3,11 @@ import styles from "./Navbar.module.css";
 import { Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
+import AlertModal from "Components/AlertModal/AlertModal";
 
 const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
+  const [show, setShow] = useState(false);
   const location = useLocation();
   return (
     <header className={styles.header}>
@@ -87,7 +89,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <button className={`btn text-danger p-0 border-0`}>
+                <button className={`btn text-danger p-0 border-0`} onClick={() =>setShow(true)}>
                   <FeatherIcon icon="log-out" size={18} strokeWidth={2} />
                 </button>
               </li>
@@ -95,6 +97,7 @@ const Navbar = () => {
           </div>
         </nav>
       </Container>
+      <AlertModal show={show} setShow={setShow} type="confirm" />
     </header>
   );
 };
